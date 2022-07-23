@@ -6,11 +6,33 @@ import java.util.List;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        if(leftBorder >= rightBorder){
+            int switchNumber = leftBorder;
+            leftBorder = rightBorder;
+            rightBorder = switchNumber;
+        }
+        int sumOfEvens = 0;
+        for(int number = leftBorder; number <= rightBorder; number++){
+            if (number%2 == 0) {
+                sumOfEvens += number;
+            }
+        }
+        return sumOfEvens;
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        if(leftBorder >= rightBorder){
+            int switchNumber = leftBorder;
+            leftBorder = rightBorder;
+            rightBorder = switchNumber;
+        }
+        int sumOfOdds = 0;
+        for(int number = leftBorder; number <= rightBorder; number++){
+            if (number%2 == 1) {
+                sumOfOdds += number;
+            }
+        }
+        return sumOfOdds;
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
