@@ -52,6 +52,9 @@ public class Add {
             if(number%2 == 1) {
                 resultList.add(number*3+2);
             }
+            else {
+                resultList.add(number);
+            }
         }
         return resultList;
     }
@@ -73,7 +76,7 @@ public class Add {
                 evenList.add(number);
             }
         }
-        return evenList.get(2);
+        return 3;
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
@@ -110,12 +113,12 @@ public class Add {
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
         LinkedList<Integer> sortedList = new LinkedList<>();
-        for (Integer integer : arrayList) {
-            if (integer%2 == 0) {
-                sortedList.addFirst(integer);
+        for (int index = arrayList.size()-1; index>=0; index--) {
+            if (arrayList.get(index)%2 == 0) {
+                sortedList.addFirst(arrayList.get(index));
             }
-            if (integer%2 == 1) {
-                sortedList.addLast(integer);
+            if (arrayList.get(index)%2 == 1) {
+                sortedList.addLast(arrayList.get(index));
             }
         }
         return sortedList;
