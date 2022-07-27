@@ -36,9 +36,7 @@ public class AddTest {
         //求数组中每个元素的3倍加2的和
         Integer[] array = new Integer[]{1, 5, 7, 11, 35, 67};
         List<Integer> arrayList = Arrays.asList(array);
-
         Add add = new Add();
-
         assertThat(add.getSumTripleAndAddTwo(arrayList)).isEqualTo(390);
     }
 
