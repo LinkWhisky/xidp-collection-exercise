@@ -13,42 +13,96 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        int maxNumber = Integer.MIN_VALUE;
+        for (Integer integer : arrayList) {
+            if (integer > maxNumber) {
+                maxNumber = integer;
+            }
+        }
+        return maxNumber;
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        int minNumber = Integer.MAX_VALUE;
+        for (Integer integer : arrayList) {
+            if (integer < minNumber) {
+                minNumber = integer;
+            }
+        }
+        return minNumber;
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        int sum = 0;
+        for (Integer integer : arrayList) {
+            sum += integer;
+        }
+        return (double) sum/arrayList.size();
     }
 
-    public double getMedian() { throw new NotImplementedException(); }
+    public double getMedian() {
+        if (arrayList.size()%2 == 1) {
+            return arrayList.get(arrayList.size()/2);
+        }
+        return ((double) arrayList.get(arrayList.size()/2) + arrayList.get(arrayList.size()/2-1))/2;
+    }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        if (arrayList.size()%2 == 1) {
+            return arrayList.get(arrayList.size()/2);
+        }
+        return ((double) arrayList.get(arrayList.size()/2) + arrayList.get(arrayList.size()/2-1))/2;
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        for (Integer integer : arrayList) {
+            if (integer%2 == 0) {
+                return integer;
+            }
+        }
+        return -1;
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i)%2 == 0) {
+                return  i;
+            }
+        }
+        return -1;
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        if(arrayList.size() != this.arrayList.size()){
+            return false;
+        }
+        boolean equal = true;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i) != this.arrayList.get(i)){
+                equal = false;
+            }
+        }
+        return equal;
     }
 
 
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        for (int i = arrayList.size()-1; i >= 0; i--) {
+            if (arrayList.get(i)%2 == 1) {
+                return arrayList.get(i);
+            }
+        }
+        return -1;
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        for (int i = arrayList.size()-1; i >= 0; i--) {
+            if (arrayList.get(i)%2 == 1) {
+                return i;
+            }
+        }
+        return -1;
+
     }
 }
